@@ -22,13 +22,13 @@ function Transfer({ address, setBalance, senderPrivatekey }) {
       typeof value === "bigint" ? value.toString() : value;
     const signatureJSON = JSON.stringify(signature, replacer);
     //console.log(signatureJSON);
-    console.log("Sending request:", {
+    /*console.log("Sending request:", {
       sender: address,
       amount: parseInt(sendAmount),
       recipient,
       signature: signatureJSON,
       msg,
-    });
+    });*/
     try {
       //const {
       //  data: { balance },
@@ -37,7 +37,7 @@ function Transfer({ address, setBalance, senderPrivatekey }) {
         sender: address,
         amount: parseInt(sendAmount),
         recipient,
-        signature: signature,
+        signature: signatureJSON,
         msg: msg,
       });
       console.log("response", response);
